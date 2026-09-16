@@ -1,4 +1,6 @@
-# PulseFit Gym Management Dashboard
+
+
+# Challenger Gym Management Dashboard
 
 A responsive, browser-based gym management dashboard for members, trainers, plans, attendance, payments, workout schedules and management reports.
 
