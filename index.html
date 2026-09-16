@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1b2a" />
+    <title>PulseFit | Gym Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-mark">P</div>
+          <div>
+            <strong>pulsefit</strong>
+            <span>management studio</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <p class="sidebar-label">Workspace</p>
+          <nav class="nav-list" aria-label="Primary navigation">
+            <button class="nav-item active" data-section="overview">
+              <span class="nav-icon">⌂</span><span>Overview</span>
+            </button>
+            <button class="nav-item" data-section="members">
+              <span class="nav-icon">◎</span><span>Members</span><span class="nav-count" id="memberNavCount">128</span>
+            </button>
+            <button class="nav-item" data-section="trainers">
+              <span class="nav-icon">♙</span><span>Trainers</span>
+            </button>
+            <button class="nav-item" data-section="plans">
+              <span class="nav-icon">▦</span><span>Membership plans</span>
+            </button>
+            <button class="nav-item" data-section="attendance">
+              <span class="nav-icon">◷</span><span>Attendance</span>
+            </button>
+            <button class="nav-item" data-section="payments">
+              <span class="nav-icon">↗</span><span>Payments</span>
+            </button>
+            <button class="nav-item" data-section="workouts">
+              <span class="nav-icon">✦</span><span>Workout schedules</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="sidebar-section sidebar-reports">
+          <p class="sidebar-label">Insights</p>
+          <button class="nav-item" data-section="reports">
+            <span class="nav-icon">▥</span><span>Reports</span>
+          </button>
+        </div>
+
+        <div class="sidebar-bottom">
+          <div class="help-card">
+            <div class="help-icon">?</div>
+            <div>
+              <strong>Need a hand?</strong>
+              <span>View the admin guide</span>
+            </div>
+            <span class="arrow">→</span>
+          </div>
+          <div class="user-card">
+            <div class="avatar avatar-purple">AM</div>
+            <div class="user-details">
+              <strong>Alex Morgan</strong>
+              <span>Administrator</span>
+            </div>
+            <button class="more-button" aria-label="More account options">•••</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+          <div class="breadcrumbs"><span>Workspace</span><b>/</b><strong id="breadcrumbTitle">Overview</strong></div>
+          <div class="topbar-actions">
+            <button class="icon-button notification-button" aria-label="Notifications">♢<i></i></button>
+            <div class="topbar-date"><span class="status-dot"></span> Tuesday, September 16, 2026</div>
+          </div>
+        </header>
+
+        <div class="content-wrap">
+          <section class="page-section active" id="overview">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow">Tuesday, September 16, 2026</p>
+                <h1>Good morning, Alex <span>✦</span></h1>
+                <p class="heading-copy">Here’s what’s happening at your gym today.</p>
+              </div>
+              <button class="primary-button" id="quickAddButton"><span>＋</span> Quick add</button>
+            </div>
+
+            <div class="stat-grid">
+              <article class="stat-card">
+                <div class="stat-top"><span class="stat-label">Active members</span><span class="stat-icon blue">◎</span></div>
+                <div class="stat-value" id="activeMembers">128</div>
+                <div class="stat-meta positive"><span>↗ 12.5%</span> vs last month</div>
+                <div class="mini-bars bars-blue"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </article>
+              <article class="stat-card">
+                <div class="stat-top"><span class="stat-label">Monthly revenue</span><span class="stat-icon yellow">↗</span></div>
+                <div class="stat-value">$24,680</div>
+                <div class="stat-meta positive"><span>↗ 8.2%</span> vs last month</div>
+                <div class="mini-bars bars-yellow"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </article>
+              <article class="stat-card">
+                <div class="stat-top"><span class="stat-label">Today’s attendance</span><span class="stat-icon pink">◷</span></div>
+                <div class="stat-value">76<span class="stat-unit"> / 128</span></div>
+                <div class="stat-meta"><span class="attendance-percent">59.4%</span> checked in today</div>
+                <div class="progress-track"><span style="width: 59.4%"></span></div>
+              </article>
+              <article class="stat-card">
+                <div class="stat-top"><span class="stat-label">Pending payments</span><span class="stat-icon orange">!</span></div>
+                <div class="stat-value">09</div>
+                <div class="stat-meta warning"><span>Needs attention</span> this week</div>
+                <div class="payment-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </article>
+            </div>
+
+            <div class="dashboard-grid">
+              <article class="panel revenue-panel">
+                <div class="panel-header">
+                  <div><p class="eyebrow">Overview</p><h2>Revenue performance</h2></div>
+                  <select class="select-control" id="revenuePeriod"><option>Last 7 months</option><option>Last 12 months</option><option>This year</option></select>
+                </div>
+                <div class="revenue-summary"><strong>$142,560</strong><span class="positive">↗ 18.4%</span><small>total revenue this year</small></div>
+                <div class="chart-area">
+                  <div class="chart-y-axis"><span>$30k</span><span>$20k</span><span>$10k</span><span>$0</span></div>
+                  <div class="line-chart">
+                    <div class="grid-lines"><i></i><i></i><i></i><i></i></div>
+                    <svg viewBox="0 0 640 220" preserveAspectRatio="none" aria-label="Revenue line chart">
+                      <defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5c57e8" stop-opacity=".28"/><stop offset="1" stop-color="#5c57e8" stop-opacity="0"/></linearGradient></defs>
+                      <path class="chart-fill" d="M0,180 C44,173 52,125 96,146 S150,170 190,118 S242,72 286,101 S335,133 380,77 S424,50 470,74 S525,115 562,42 S614,72 640,28 L640,220 L0,220 Z"></path>
+                      <path class="chart-line" d="M0,180 C44,173 52,125 96,146 S150,170 190,118 S242,72 286,101 S335,133 380,77 S424,50 470,74 S525,115 562,42 S614,72 640,28"></path>
+                      <circle cx="562" cy="42" r="5"></circle>
+                    </svg>
+                    <div class="chart-x-axis"><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="panel attendance-panel">
+                <div class="panel-header"><div><p class="eyebrow">Today</p><h2>Attendance</h2></div><button class="link-button" data-section-link="attendance">View report →</button></div>
+                <div class="attendance-ring-wrap"><div class="attendance-ring"><div><strong>59%</strong><span>checked in</span></div></div><div class="attendance-legend"><p><i class="legend-dot purple"></i><span>Checked in</span><strong>76</strong></p><p><i class="legend-dot pale"></i><span>Not checked in</span><strong>52</strong></p></div></div>
+                <div class="attendance-foot"><span>Peak hour</span><strong>5:00 – 7:00 PM</strong></div>
+              </article>
+            </div>
+
+            <div class="dashboard-grid lower-grid">
+              <article class="panel table-panel">
+                <div class="panel-header"><div><p class="eyebrow">Latest activity</p><h2>Recent members</h2></div><button class="link-button" data-section-link="members">View all →</button></div>
+                <div class="table-wrap"><table><thead><tr><th>Member</th><th>Plan</th><th>Joined</th><th>Status</th></tr></thead><tbody id="recentMembersBody"></tbody></table></div>
+              </article>
+              <article class="panel schedule-panel">
+                <div class="panel-header"><div><p class="eyebrow">Up next</p><h2>Today’s schedule</h2></div><button class="link-button" data-section-link="workouts">View calendar →</button></div>
+                <div class="schedule-list" id="todaySchedule"></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="page-section" id="members">
+            <div class="page-heading"><div><p class="eyebrow">Workspace / Members</p><h1>Members</h1><p class="heading-copy">Manage memberships, status and member activity.</p></div><button class="primary-button" id="addMemberButton"><span>＋</span> Add member</button></div>
+            <div class="section-toolbar"><div class="search-box"><span>⌕</span><input id="memberSearch" type="search" placeholder="Search members..." /></div><select class="select-control"><option>All statuses</option><option>Active</option><option>Expiring soon</option></select></div>
+            <article class="panel table-panel full-panel"><div class="table-wrap"><table><thead><tr><th>Member</th><th>Membership plan</th><th>Trainer</th><th>Joined</th><th>Renewal</th><th>Status</th></tr></thead><tbody id="membersBody"></tbody></table></div></article>
+          </section>
+
+          <section class="page-section" id="trainers">
+            <div class="page-heading"><div><p class="eyebrow">Workspace / Trainers</p><h1>Trainers</h1><p class="heading-copy">Keep track of your coaching team and their sessions.</p></div><button class="primary-button"><span>＋</span> Add trainer</button></div>
+            <div class="trainer-grid" id="trainerGrid"></div>
+          </section>
+
+          <section class="page-section" id="plans">
+            <div class="page-heading"><div><p class="eyebrow">Workspace / Membership plans</p><h1>Membership plans</h1><p class="heading-copy">Configure pricing and see which plans drive growth.</p></div><button class="primary-button"><span>＋</span> Create plan</button></div>
+            <div class="plan-grid" id="planGrid"></div>
+          </section>
+
+          <section class="page-section" id="attendance">
+            <div class="page-heading"><div><p class="eyebrow">Workspace / Attendance</p><h1>Attendance report</h1><p class="heading-copy">Monitor check-ins and identify your busiest hours.</p></div><button class="secondary-button">Export report ↓</button></div>
+            <div class="stat-grid compact-stats"><article class="stat-card"><span class="stat-label">Check-ins this month</span><div class="stat-value">1,842</div><div class="stat-meta positive">↗ 14.2% vs August</div></article><article class="stat-card"><span class="stat-label">Average daily visits</span><div class="stat-value">71</div><div class="stat-meta">out of 128 members</div></article><article class="stat-card"><span class="stat-label">Most active day</span><div class="stat-value">Wed</div><div class="stat-meta">84 average check-ins</div></article></div>
+            <article class="panel report-chart-panel"><div class="panel-header"><div><p class="eyebrow">Last 7 days</p><h2>Daily check-ins</h2></div><select class="select-control"><option>This week</option><option>Last week</option></select></div><div class="bar-chart" id="attendanceBarChart"></div></article>
+          </section>
+
+          <section class="page-section" id="payments">
+            <div class="page-heading"><div><p class="eyebrow">Workspace / Payments</p><h1>Payments</h1><p class="heading-copy">Review collected revenue and follow up on outstanding invoices.</p></div><button class="secondary-button">Export transactions ↓</button></div>
+            <div class="stat-grid compact-stats"><article class="stat-card"><span class="stat-label">Collected this month</span><div class="stat-value">$24,680</div><div class="stat-meta positive">↗ 8.2% vs August</div></article><article class="stat-card"><span class="stat-label">Outstanding</span><div class="stat-value">$2,140</div><div class="stat-meta warning">9 payments overdue</div></article><article class="stat-card"><span class="stat-label">Average payment</span><div class="stat-value">$193</div><div class="stat-meta">per active member</div></article></div>
+            <article class="panel table-panel full-panel"><div class="panel-header"><div><p class="eyebrow">Transactions</p><h2>Recent payments</h2></div><div class="search-box compact"><span>⌕</span><input type="search" placeholder="Search payments..." /></div></div><div class="table-wrap"><table><thead><tr><th>Member</th><th>Plan</th><th>Date</th><th>Amount</th><th>Method</th><th>Status</th></tr></thead><tbody id="paymentsBody"></tbody></table></div></article>
+          </section>
+
+          <section class="page-section" id="workouts">
+            <div class="page-heading"><div><p class="eyebrow">Workspace / Workout schedules</p><h1>Workout schedules</h1><p class="heading-copy">See sessions, classes and trainer availability at a glance.</p></div><button class="primary-button"><span>＋</span> Schedule workout</button></div>
+            <article class="panel calendar-panel"><div class="calendar-heading"><button class="calendar-arrow">‹</button><div><strong>September 2026</strong><span>Week 38</span></div><button class="calendar-arrow">›</button><button class="secondary-button today-button">Today</button></div><div class="week-grid"><div class="week-day muted">MON <strong>14</strong></div><div class="week-day active">TUE <strong>15</strong></div><div class="week-day">WED <strong>16</strong></div><div class="week-day">THU <strong>17</strong></div><div class="week-day">FRI <strong>18</strong></div><div class="week-day">SAT <strong>19</strong></div><div class="week-day">SUN <strong>20</strong></div></div><div class="calendar-events" id="calendarEvents"></div></article>
+          </section>
+
+          <section class="page-section" id="reports">
+            <div class="page-heading"><div><p class="eyebrow">Insights / Reports</p><h1>Reports</h1><p class="heading-copy">A clear view of the numbers that move your gym forward.</p></div><button class="secondary-button">Download summary ↓</button></div>
+            <div class="report-cards"><article class="report-card purple-card"><div class="report-card-icon">◎</div><div><span>Membership health</span><strong>128 active members</strong><small>12.5% growth this month</small></div><span class="report-arrow">→</span></article><article class="report-card yellow-card"><div class="report-card-icon">↗</div><div><span>Payment collection</span><strong>92.4% collected</strong><small>$2,140 currently outstanding</small></div><span class="report-arrow">→</span></article><article class="report-card pink-card"><div class="report-card-icon">◷</div><div><span>Attendance trends</span><strong>71 avg. daily visits</strong><small>Wednesday is your busiest day</small></div><span class="report-arrow">→</span></article></div>
+            <article class="panel report-insight-panel"><div class="panel-header"><div><p class="eyebrow">Manager’s note</p><h2>What needs your attention</h2></div></div><div class="insight-list"><div><span class="insight-number">01</span><p><strong>9 members</strong> have payments overdue this week. A friendly reminder could recover <strong>$2,140</strong>.</p><button class="link-button" data-section-link="payments">Review →</button></div><div><span class="insight-number">02</span><p><strong>Evening classes</strong> are reaching 92% capacity. Consider adding another HIIT session on Wednesdays.</p><button class="link-button" data-section-link="workouts">View schedule →</button></div><div><span class="insight-number">03</span><p><strong>12 memberships</strong> expire in the next 14 days. Reach out early to improve renewal rates.</p><button class="link-button" data-section-link="members">See members →</button></div></div></article>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="memberModal" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+        <p class="eyebrow">Member directory</p><h2 id="modalTitle">Add a new member</h2><p class="modal-copy">Add a member to your gym roster. They’ll appear in the dashboard immediately.</p>
+        <form id="memberForm"><label>Full name<input name="name" required placeholder="e.g. Priya Shah" /></label><label>Membership plan<select name="plan"><option>Peak Performance</option><option>Momentum</option><option>Essential</option></select></label><label>Trainer<input name="trainer" value="Unassigned" /></label><div class="modal-actions"><button type="button" class="secondary-button" id="cancelModal">Cancel</button><button type="submit" class="primary-button">Add member</button></div></form>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
