@@ -14,17 +14,17 @@ const trainers = [
 ];
 
 const plans = [
-  { name: "Essential", price: "₹49", cadence: "/ month", description: "A strong foundation for consistent training.", members: "42", revenue: "₹2,058" },
-  { name: "Momentum", price: "₹89", cadence: "/ month", description: "More access, more accountability, more results.", members: "51", revenue: "₹4,539", featured: true },
-  { name: "Peak Performance", price: "₹149", cadence: "/ month", description: "The complete coaching experience for ambitious goals.", members: "35", revenue: "₹5,215" },
+  { name: "Essential", price: "₹1,499", cadence: "/ month", description: "A strong foundation for consistent training.", members: "42", revenue: "₹62,958" },
+  { name: "Momentum", price: "₹2,999", cadence: "/ month", description: "More access, more accountability, more results.", members: "51", revenue: "₹1,52,949", featured: true },
+  { name: "Peak Performance", price: "₹4,999", cadence: "/ month", description: "The complete coaching experience for ambitious goals.", members: "35", revenue: "₹1,74,965" },
 ];
 
 const payments = [
-  { name: "Maya Patel", plan: "Peak Performance", date: "Sep 14, 2026", amount: "₹149.00", method: "Visa •• 4242", status: "Paid" },
-  { name: "Noah Williams", plan: "Momentum", date: "Sep 12, 2026", amount: "₹89.00", method: "UPI", status: "Paid" },
-  { name: "Ethan Brooks", plan: "Essential", date: "Sep 10, 2026", amount: "₹49.00", method: "Mastercard •• 8821", status: "Pending" },
-  { name: "Ava Thompson", plan: "Peak Performance", date: "Sep 08, 2026", amount: "₹149.00", method: "Visa •• 3418", status: "Paid" },
-  { name: "Liam Carter", plan: "Momentum", date: "Sep 05, 2026", amount: "₹89.00", method: "UPI", status: "Paid" },
+  { name: "Maya Patel", plan: "Peak Performance", date: "Sep 14, 2026", amount: "₹4,999.00", method: "Visa •• 4242", status: "Paid" },
+  { name: "Noah Williams", plan: "Momentum", date: "Sep 12, 2026", amount: "₹2,999.00", method: "UPI", status: "Paid" },
+  { name: "Ethan Brooks", plan: "Essential", date: "Sep 10, 2026", amount: "₹1,499.00", method: "Mastercard •• 8821", status: "Pending" },
+  { name: "Ava Thompson", plan: "Peak Performance", date: "Sep 08, 2026", amount: "₹4,999.00", method: "Visa •• 3418", status: "Paid" },
+  { name: "Liam Carter", plan: "Momentum", date: "Sep 05, 2026", amount: "₹2,999.00", method: "UPI", status: "Paid" },
 ];
 
 const schedules = [
@@ -53,6 +53,31 @@ function render() {
   document.getElementById("attendanceBarChart").innerHTML = [["Mon", 58], ["Tue", 76], ["Wed", 84], ["Thu", 67], ["Fri", 79], ["Sat", 52], ["Sun", 38]].map(([day, value]) => `<div class="bar-group"><span class="bar-value">${value}</span><i class="bar" style="height: ${value}%"></i><span class="bar-label">${day}</span></div>`).join("");
 }
 
+const revenuePeriods = {
+  "Last 7 months": { total: "₹14,25,600", labels: ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"], values: [38, 48, 42, 64, 58, 78, 92] },
+  "Last 12 months": { total: "₹24,68,000", labels: ["Oct", "Dec", "Feb", "Apr", "Jun", "Aug", "Sep"], values: [32, 45, 39, 58, 66, 80, 96] },
+  "This year": { total: "₹18,72,450", labels: ["Jan", "Mar", "May", "Jul", "Sep", "Nov", "Dec"], values: [30, 52, 48, 72, 66, 84, 98] },
+};
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("visible");
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => toast.classList.remove("visible"), 2400);
+}
+
+function updateRevenueChart(period) {
+  const data = revenuePeriods[period];
+  document.getElementById("revenueTotal").textContent = data.total;
+  document.querySelector(".chart-x-axis").innerHTML = data.labels.map((label) => `<span>${label}</span>`).join("");
+  const points = data.values.map((value, index) => `${(index / (data.values.length - 1)) * 640},${220 - value * 1.75}`).join(" L");
+  const path = `M${points}`;
+  document.querySelector(".chart-line").setAttribute("d", path);
+  document.querySelector(".chart-fill").setAttribute("d", `${path} L640,220 L0,220 Z`);
+  showToast(`Revenue view changed to ${period.toLowerCase()}`);
+}
+
 function showSection(sectionId) {
   document.querySelectorAll(".page-section").forEach((section) => section.classList.toggle("active", section.id === sectionId));
   document.querySelectorAll(".nav-item").forEach((item) => item.classList.toggle("active", item.dataset.section === sectionId));
@@ -65,6 +90,13 @@ function showSection(sectionId) {
 document.addEventListener("click", (event) => {
   const nav = event.target.closest("[data-section], [data-section-link]");
   if (nav) showSection(nav.dataset.section || nav.dataset.sectionLink);
+});
+
+document.addEventListener("keydown", (event) => {
+  if ((event.key === "Enter" || event.key === " ") && event.target.matches(".interactive-card")) {
+    event.preventDefault();
+    showSection(event.target.dataset.sectionLink);
+  }
 });
 
 document.getElementById("mobileMenu").addEventListener("click", () => document.getElementById("sidebar").classList.toggle("open"));
@@ -88,6 +120,7 @@ document.getElementById("memberSearch").addEventListener("input", (event) => {
   const query = event.target.value.toLowerCase();
   document.getElementById("membersBody").innerHTML = getMembers().filter((member) => `${member.name} ${member.plan} ${member.trainer}`.toLowerCase().includes(query)).map((member) => memberRow(member, true)).join("");
 });
+document.getElementById("revenuePeriod").addEventListener("change", (event) => updateRevenueChart(event.target.value));
 
 function closeModal() { document.getElementById("memberModal").setAttribute("hidden", ""); }
 render();

@@ -230,3 +230,13 @@ td { color: var(--muted); }
   .sidebar { border-right-width: 3px; }
   .stat-card, .panel, .trainer-card, .plan-card { box-shadow: 3px 4px 0 var(--ink); }
 }
+
+.interactive-card { cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+.interactive-card:hover, .interactive-card:focus-visible { transform: translate(-3px, -3px); box-shadow: 7px 8px 0 var(--ink); outline: none; }
+.interactive-card:active { transform: translate(0, 0); box-shadow: 3px 4px 0 var(--ink); }
+.bar { transition: height .35s ease, background .2s ease; }
+.bar-group:hover .bar { background: var(--green); }
+.schedule-item { transition: background .2s ease, padding .2s ease; border-radius: 10px; }
+.schedule-item:hover { background: var(--yellow-pale); padding-left: 8px; }
+.toast { position: fixed; z-index: 20; right: 25px; bottom: 25px; max-width: 300px; padding: 13px 17px; color: var(--ink); background: var(--green); border: 2px solid var(--ink); border-radius: 999px; box-shadow: 4px 5px 0 var(--ink); font-size: 11px; font-weight: 700; opacity: 0; transform: translateY(15px); pointer-events: none; transition: .25s ease; }
+.toast.visible { opacity: 1; transform: translateY(0); }
