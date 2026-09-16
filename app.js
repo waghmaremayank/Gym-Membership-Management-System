@@ -14,17 +14,17 @@ const trainers = [
 ];
 
 const plans = [
-  { name: "Essential", price: "$49", cadence: "/ month", description: "A strong foundation for consistent training.", members: "42", revenue: "$2,058" },
-  { name: "Momentum", price: "$89", cadence: "/ month", description: "More access, more accountability, more results.", members: "51", revenue: "$4,539", featured: true },
-  { name: "Peak Performance", price: "$149", cadence: "/ month", description: "The complete coaching experience for ambitious goals.", members: "35", revenue: "$5,215" },
+  { name: "Essential", price: "₹49", cadence: "/ month", description: "A strong foundation for consistent training.", members: "42", revenue: "₹2,058" },
+  { name: "Momentum", price: "₹89", cadence: "/ month", description: "More access, more accountability, more results.", members: "51", revenue: "₹4,539", featured: true },
+  { name: "Peak Performance", price: "₹149", cadence: "/ month", description: "The complete coaching experience for ambitious goals.", members: "35", revenue: "₹5,215" },
 ];
 
 const payments = [
-  { name: "Maya Patel", plan: "Peak Performance", date: "Sep 14, 2026", amount: "$149.00", method: "Visa •• 4242", status: "Paid" },
-  { name: "Noah Williams", plan: "Momentum", date: "Sep 12, 2026", amount: "$89.00", method: "UPI", status: "Paid" },
-  { name: "Ethan Brooks", plan: "Essential", date: "Sep 10, 2026", amount: "$49.00", method: "Mastercard •• 8821", status: "Pending" },
-  { name: "Ava Thompson", plan: "Peak Performance", date: "Sep 08, 2026", amount: "$149.00", method: "Visa •• 3418", status: "Paid" },
-  { name: "Liam Carter", plan: "Momentum", date: "Sep 05, 2026", amount: "$89.00", method: "UPI", status: "Paid" },
+  { name: "Maya Patel", plan: "Peak Performance", date: "Sep 14, 2026", amount: "₹149.00", method: "Visa •• 4242", status: "Paid" },
+  { name: "Noah Williams", plan: "Momentum", date: "Sep 12, 2026", amount: "₹89.00", method: "UPI", status: "Paid" },
+  { name: "Ethan Brooks", plan: "Essential", date: "Sep 10, 2026", amount: "₹49.00", method: "Mastercard •• 8821", status: "Pending" },
+  { name: "Ava Thompson", plan: "Peak Performance", date: "Sep 08, 2026", amount: "₹149.00", method: "Visa •• 3418", status: "Paid" },
+  { name: "Liam Carter", plan: "Momentum", date: "Sep 05, 2026", amount: "₹89.00", method: "UPI", status: "Paid" },
 ];
 
 const schedules = [
